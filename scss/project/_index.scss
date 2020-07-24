@@ -196,7 +196,7 @@ body::before {
           }
           &::before {
             content: "";
-            background-image: url(../../images/person-icon.png);
+            background-image: url(../images/person-icon.png);
             padding-right: 32px;
             margin: 0 10px 0 13px;
             @include mq('pc') {

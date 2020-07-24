@@ -509,7 +509,7 @@ textarea:focus {
 
 .about .inner .pr-content .pr-introduction .name::before {
   content: "";
-  background-image: url(../../images/person-icon.png);
+  background-image: url(../images/person-icon.png);
   padding-right: 32px;
   margin: 0 10px 0 13px;
 }
@@ -862,7 +862,7 @@ textarea:focus {
 }
 
 .bottomImage {
-  background-image: url(../images/bottomimg.jpg);
+  background-image: url(../../images/bottomimg.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
