@@ -1,0 +1,476 @@
+.shutter {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#1e1e1e;
+  z-index:9999;
+  -webkit-animation: byeShutter 2.6s forwards;
+          animation: byeShutter 2.6s forwards;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #dad9d9;
+    width: 0;
+    height: 1px;
+    -webkit-animation: shutterOpen 2.6s forwards;
+          animation: shutterOpen 2.6s forwards;
+  }
+}
+
+.main-visual {
+    background-image: url(../../images/topimg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding-top: 117px;
+    -webkit-animation: contentScale 2.6s forwards;
+    animation: contentScale 2.6s forwards;
+    min-height: 100vh;
+    z-index: -100;
+  @include mq('sp') {
+    background-image: none;
+  }
+}
+
+body::before {
+  @include mq('sp') {
+    background-image: url(../../images/topimg_sp.jpg);
+    background-size: cover;
+    background-position: center;
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: -1;
+  }
+}
+
+@keyframes byeShutter {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
+}
+
+@keyframes shutterOpen {
+  0% {
+    width: 0;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title {
+  padding-bottom: 178px;
+  @include mq('sp') {
+    padding-bottom: 20px;
+  }
+  > p {
+    padding-bottom: 20px;
+    img {
+    width: 240px;
+    display: inline-block;
+    @include mq('sp') {
+      border-radius: 50%;
+      }
+    }
+  }
+  .inner {
+    color: #fff;
+    width: 630px;
+    background-color: rgba(52, 34, 34, .6);
+    padding: 19px 0;
+    @include mq('sp') {
+      width: 300px;
+    }
+    h1 {
+      font-size: 50px;
+      margin-bottom: 35px;
+      @include mq('sp') {
+        font-size: 40px;
+      }
+    }
+    h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      @include mq('sp') {
+        font-size: 24px;
+      }
+      &::before, &::after {
+        content: '';
+        height: 2px;
+        background-color: #fff;
+        flex-grow: 1;
+        margin: 0 15px;
+      }
+    }
+    p {
+      font-family: $ff-base;
+      font-size: 20px;
+      margin-bottom: 18px;
+      line-height: division(34, 20);
+      @include mq('sp') {
+        line-height: 1.4;
+        font-size: 16px;
+        &:last-child {
+          text-align: justify;
+        }
+      }
+    }
+  }
+}
+
+.about {
+  padding-bottom: 50px;
+  text-shadow: 0 0 5px #fff;
+  .inner {
+    @include mq('tab') {
+      padding: 0 10px;
+    }
+    h3 {
+      margin-bottom: 94px;
+    }
+    .pr-content {
+      figure {
+        margin: 0 15px 5px 15px;
+        animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        max-width: 400px;
+        max-height: 400px;
+        @include mq('tab') {
+          margin-bottom: 25px;
+        }
+        @include mq('sp') {
+          margin-bottom: 25px;
+        }
+        img {
+          object-fit: cover;
+        }
+      }
+      .pr-introduction {
+        @include mq('sp') {
+          padding: 0 15px;
+        }
+        h4 {
+          margin-bottom: 15px;
+          text-align: justify;
+          @include mq('tab') {
+            padding: 0 15px;
+          }
+          @include mq('sp') {
+            width: 200px;
+            margin: 0 auto 25px;
+            padding: 0 25px 7px 25px;
+            text-align: center;
+            border-bottom: 2px solid $cr-txt;
+          }
+        }
+        .name {
+          font-weight: 600;
+          font-size: 18px;
+          margin: 6px 0 10px 0;
+          @include mq('sp') {
+            padding: 0 10px;
+            font-size: 16px;
+          }
+          &::before {
+            content: "";
+            background-image: url(../../images/person-icon.png);
+            padding-right: 32px;
+            margin: 0 10px 0 13px;
+            @include mq('pc') {
+              margin-left: 0;
+            }
+          }
+          span {
+            font-family: ROLAchan;
+          }
+        }
+        .pr-txt {
+          font-size: 16px;
+          line-height: division(31, 18);
+          padding-right: 100px;
+          .environment {
+            font-size: 18px;
+          }
+          .emphasis {
+            font-weight: bold;
+          }
+          @include mq('tab') {
+            padding: 0 15px;
+          }
+          @include mq('sp') {
+            padding: 0 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.skill {
+    text-shadow: 0 0 5px #fff;
+  .inner {
+    color: $cr-txt;
+    padding-bottom: 100px;
+    @include mq('sp') {
+      padding-bottom: 60px;
+    }
+    h4 {
+      border-bottom: 2px solid $cr-txt;
+      width: 250px;
+      margin: 0 auto 25px;
+      padding-bottom: 7px;
+      @include mq('sp') {
+        width: 200px;
+      }
+    }
+    .rola {
+      text-align: center;
+      line-height: division(27, 16);
+      font-size: 18px;
+      a{
+        border-bottom: 2px solid #037BFE;
+        font-weight: bold;
+        &:hover {
+          transition: 0.8s;
+          opacity: 0.5;
+        }
+      }
+      @include mq('sp') {
+        margin-bottom: 20px;
+      }
+    }
+    figure {
+      max-width: 679px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.work {
+  .inner {
+    padding-bottom: 100px;
+    @include mq('sp') {
+      padding-bottom: 50px;
+    }
+    .Text-Span, .one-word {
+      text-shadow: 0 0 5px #fff;
+    }
+    .select-btn_wrap {
+      margin-top: 28.15px;
+      text-align: center;
+      margin-bottom:60px;
+      button {
+        padding: 4px 12px;
+        border-radius: 13px;
+        border: 1px solid rgba(52, 34, 34, 0.45);
+        margin-bottom: 15px;
+      }
+    }
+    .pf-content {
+      ul {
+        flex-wrap: wrap;
+        padding: 0 10px;
+        li {
+          padding-bottom: 70px;
+          figure {
+            position: relative;
+            animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            img {
+              height: 300px;
+              width: 100%;
+              object-fit: cover;
+              object-position: 0 0;
+            }
+            .s-coffeeimg {
+              object-position: 15% 0;
+            }
+            .sobolonimg {
+              object-position: 80% 0;
+            }
+            .arrowsssimg, .cafesaryoimg {
+              object-position: 45% 0;
+            }
+            .portfoliositeimg,.salon-de-beauteimg, .cresta-jyo-kyuimg, .omikujiimg {
+              object-position: 50% 0;
+            }
+            .daytrialimg {
+              object-position: 20% 0;
+            }
+            .hover-mask {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              width: 95%;
+              height: 95%;
+              padding: 40px 15px;
+              color: #fff;
+              background-color: rgba(0, 0, 0, 0.7);
+              opacity: 0;
+              text-align: center;
+              transition:all 0.6s ease;
+              margin: auto;
+              &:hover, &:focus {
+                opacity: 1;
+              }
+            }
+          }
+          .list_item__txt {
+            text-align: center;
+            padding-top: 20px;
+            text-shadow: 0 0 5px #fff;
+          }
+        }
+      }
+    }
+    .linkButton {
+      display: block;
+      padding: 15px;
+      color: #fff;
+      width: 145px;
+      text-decoration: none;
+      user-select: none;
+      background-color: $btn-background-color;
+      border-radius: 3px;
+      transition: 0.4s ease;
+      &:hover, &:focus {
+        transition: 0.6s;
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+@keyframes shadow-drop-center {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.search_item {
+  display: inline-block;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.search_item.is-active {
+  color: #fff;
+  background-color: $btn-background-color;
+}
+
+.is-hide {
+  display: none;
+}
+
+// light-box
+.lb-dataContainer {
+  position: relative;
+}
+
+.lb-closeContainer {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+.service {
+  text-shadow: 0 0 5px #fff;
+  .inner {
+    padding: 0 30px 100px 30px;
+    @include mq('sp') {
+      padding-bottom: 80px;
+    }
+    .one-word {
+      @include mq('sp') {
+        text-align: justify;
+      }
+    }
+    .serviceMenus {
+      text-align: center;
+      .menuItem {
+        margin-bottom: 40px;
+        figure {
+          margin-bottom: 15px;
+        }
+        h4 {
+          border-bottom: 2px solid $cr-txt;
+          margin:8px auto 15px;
+          padding-bottom: 7px;
+        }
+        .menuTxt {
+          font-size: 16px;
+          line-height: division(27, 16);
+          text-align: justify;
+        }
+      }
+      .price {
+        h4 {
+          border-bottom: 2px solid $cr-txt;
+          margin:8px auto 15px;
+          padding-bottom: 7px;
+        }
+        .priceTable {
+          tbody {
+            text-align: justify;
+          }
+          th {
+            padding: 10px 20px;
+            font-weight: $fw-base;
+            @include mq('sp') {
+              font-size: 14px;
+              padding: 10px 5px;
+            }
+          }
+          td {
+            padding: 10px 20px 10px 10px;
+            font-weight: bold;
+            @include mq('sp') {
+              font-size: 14px;
+              padding: 10px 5px 0 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bottomImage {
+  background-image: url(../../images/bottomimg.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: #fff;
+  @include mq('sp') {
+    background-image: none;
+  }
+}

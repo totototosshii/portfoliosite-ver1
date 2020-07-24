@@ -1,0 +1,14 @@
+// 割り算						// 分子				// 分母
+@function division($numerator, $denominator) {
+	@return $numerator / $denominator;
+}
+// （例）line-height: division(34,16);→行間/フォントサイズ
+// （例）letter-spacing: division(34,1000);→文字間(AV)/1000em
+
+
+// vw計算
+@function vw($windows_width, $font_size) {
+	@return $font_size / $windows_width * 100vw;
+}
+// $windows_width→inner幅 - 1px
+// $font_sizeの部分はpadding、margin、widthでも可能。

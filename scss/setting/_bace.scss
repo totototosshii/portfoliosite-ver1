@@ -1,0 +1,190 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p,
+i, ul, li,
+form, label,
+table, caption, tbody, tfoot, thead, tr, th, td,
+figcaption, figure,
+footer, header, menu, nav, section {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+
+body {
+  line-height: $lh-base;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  color: $cr-txt;
+  font-weight: $fw-base;
+  font-feature-settings: "palt";
+  text-align: justify;
+  letter-spacing: 1.5px;
+}
+
+.pr-introduction, .one-word, .select-btn_wrap, .pf-content, .linkButton, .service, .formrun {
+  font-family: $ff-base;
+}
+
+h1, h2, h3, h4, .menu-item, .rola, .copyright {
+  font-family: ROLAchan;
+}
+
+h1 {
+  margin-bottom: 19.65px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 40px;
+  margin-top: 60px;
+  margin-bottom: 19.65px;
+  padding-bottom: 20px;
+  text-align: center;
+  @include mq('sp') {
+    font-size: 28px;
+  }
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+}
+
+.about, .skill, .work, .service {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+// 下線アニメーション
+.Text-Span {
+  position: relative;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -14px;
+    width: 0%;
+    height: 4px;
+    background: rgb(100,197,255);
+    z-index: -1;
+    transition: all 1s;
+  }
+}
+
+.Text-Span.isActive:after {
+  width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+table {
+	border: none;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+
+a {
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+	height: auto;
+	border: none;
+	vertical-align: bottom;
+}
+
+input, textarea, a {
+  outline: none;
+  width: 100%;
+	border-radius: 0;
+	background-image: none;
+	font-family: inherit;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+  font-family: $ff-base;
+  line-height: 1;
+  color: inherit;
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  &:hover, &:focus {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.one-word {
+  font-size: 16px;
+  margin: 0 auto 38.65px;
+  text-align: center;
+  line-height: division(27, 16);
+  padding-bottom: 20px;
+  @include mq('sp') {
+    max-width: 360px;
+  }
+}
+
+.scrollTop {
+  position: relative;
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  width: 50px;
+  height: 50px;
+  background: $btn-background-color;
+  border-radius: 50%;
+  display: none;
+  &:hover {
+    transform: translateY(-5px);
+    transition: all .7s;
+  }
+  .fa-chevron-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.is-fadein {
+  display: block;
+  cursor: pointer;
+}

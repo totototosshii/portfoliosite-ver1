@@ -1,0 +1,31 @@
+// 背景
+$cr-bg: rgba(255, 255, 255, 0.83);
+
+// テキスト色
+$cr-txt: #707070;
+
+// ボタンカラー
+$btn-background-color: #00BBDD;
+
+// フォントスタイル
+$ff-gothic: 'Noto Sans JP',sans-serif;
+$fz-base: 1.6rem;
+$ff-base: $ff-gothic;
+$fw-base: 500;
+$lh-base: 1.6;
+
+// レイアウト幅
+$layout-width-inner: 1080px;
+
+// ブレークポイント
+$breakpoints: (
+  "sp": "(max-width: 767px)",
+  "tab": "(min-width: 768px) and (max-width: #{$layout-width-inner - 1px})",
+  "pc": "(min-width: #{$layout-width-inner})"
+);
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)}  {
+    @content;
+  }
+}

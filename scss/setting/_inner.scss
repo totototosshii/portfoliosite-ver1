@@ -1,0 +1,12 @@
+.inner {
+	color: $cr-txt;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 100%;
+	width: $layout-width-inner;
+  height: inherit;
+	overflow:hidden;// スマホレスポンシブ時右側余白ケア
+	@include mq('sp') {
+		padding: 0 10px;
+	}
+}
