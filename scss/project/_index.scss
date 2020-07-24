@@ -24,7 +24,7 @@
 }
 
 .main-visual {
-    background-image: url(../../images/topimg.jpg);
+    background-image: url(../images/topimg.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -40,7 +40,7 @@
 
 body::before {
   @include mq('sp') {
-    background-image: url(../../images/topimg_sp.jpg);
+    background-image: url(../images/topimg_sp.jpg);
     background-size: cover;
     background-position: center;
     content: "";

@@ -249,7 +249,7 @@ textarea:focus {
 }
 
 .main-visual {
-  background-image: url(../../images/topimg.jpg);
+  background-image: url(../images/topimg.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -268,7 +268,7 @@ textarea:focus {
 
 @media (max-width: 767px) {
   body::before {
-    background-image: url(../../images/topimg_sp.jpg);
+    background-image: url(../images/topimg_sp.jpg);
     background-size: cover;
     background-position: center;
     content: "";
