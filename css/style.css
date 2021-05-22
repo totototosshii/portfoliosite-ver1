@@ -185,7 +185,6 @@ textarea:focus {
 
 .scrollTop:hover {
   -webkit-transform: translateY(-5px);
-      -ms-transform: translateY(-5px);
           transform: translateY(-5px);
   -webkit-transition: all .7s;
   transition: all .7s;
@@ -197,7 +196,6 @@ textarea:focus {
   left: 50%;
   color: #fff;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
@@ -732,7 +730,6 @@ textarea:focus {
   transition: 0.6s;
   opacity: 0.8;
   -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
           transform: scale(1.05);
 }
 
@@ -900,7 +897,6 @@ textarea:focus {
 #header .nav-menu .menu-item:hover {
   background-color: rgba(248, 140, 45, 0.8);
   -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
@@ -941,10 +937,8 @@ textarea:focus {
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
     -webkit-transform-origin: 0% 0%;
-        -ms-transform-origin: 0% 0%;
             transform-origin: 0% 0%;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
     left: 0;
@@ -964,7 +958,6 @@ textarea:focus {
   }
   #header .zdo_drawer_button.active .zdo_drawer_bar1 {
     -webkit-transform: rotate(0.7854rad) translateY(-50%);
-        -ms-transform: rotate(0.7854rad) translateY(-50%);
             transform: rotate(0.7854rad) translateY(-50%);
     top: 0px;
   }
@@ -973,7 +966,6 @@ textarea:focus {
   }
   #header .zdo_drawer_button.active .zdo_drawer_bar3 {
     -webkit-transform: rotate(-0.7854rad) translateY(-50%);
-        -ms-transform: rotate(-0.7854rad) translateY(-50%);
             transform: rotate(-0.7854rad) translateY(-50%);
     top: calc(100% - 0px);
   }
